@@ -17,7 +17,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var pictureImage: UIImageView!
     
     @IBAction func cameraButtonAction(_ sender: Any) {
-        // カメラが利用可能かチェック
+ // カメラが利用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             print("カメラは利用できます")
             
@@ -38,6 +38,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func SNSButtonAction(_ sender: Any) {
+        // 表示画像をアンラップしてシェア画像として取り出し
+        if let shareImage = pictureImage.image {
+            
+            // UIActivityViewControllerに渡す配列を作成
+            let shareItems = [shareImage]
+            
+            // UIActivityViewControllerにシェア画像を渡す
+            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            
+            // ipad向け ポップオーバーのための位置情報を指定
+            controller.popoverPresentationController?.sourceView = view
+            
+            // UIActivityViewControllerを表示
+            present(controller, animated: true, completion: nil)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
