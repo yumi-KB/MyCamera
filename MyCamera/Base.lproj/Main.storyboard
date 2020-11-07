@@ -64,11 +64,78 @@
                     </view>
                     <connections>
                         <outlet property="pictureImage" destination="ODr-ha-VUW" id="N4x-aj-eQE"/>
+                        <segue destination="scT-ZW-GcU" kind="show" identifier="showEffectView" id="KFk-3Y-HeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="89"/>
+        </scene>
+        <!--Effect View Controller-->
+        <scene sceneID="CVv-eN-u1j">
+            <objects>
+                <viewController id="scT-ZW-GcU" customClass="EffectViewController" customModule="MyCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HQb-5d-icS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="44P-6a-BJ7">
+                                <rect key="frame" x="16" y="0.0" width="382" height="598"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um9-76-ZvI">
+                                <rect key="frame" x="16" y="628" width="382" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cOM-tz-dnJ"/>
+                                </constraints>
+                                <state key="normal" title="エフェクト">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daN-UL-rvq">
+                                <rect key="frame" x="16" y="688" width="382" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="37K-2Y-C6R"/>
+                                </constraints>
+                                <state key="normal" title="シェア">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLr-2z-TDp">
+                                <rect key="frame" x="16" y="748" width="382" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6fJ-L9-BZ6"/>
+                                </constraints>
+                                <state key="normal" title="閉じる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KU5-LE-7yT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="44P-6a-BJ7" firstAttribute="top" secondItem="KU5-LE-7yT" secondAttribute="top" id="808-Rw-bPG"/>
+                            <constraint firstItem="um9-76-ZvI" firstAttribute="leading" secondItem="KU5-LE-7yT" secondAttribute="leading" constant="16" id="Bpl-YF-fDv"/>
+                            <constraint firstItem="daN-UL-rvq" firstAttribute="top" secondItem="um9-76-ZvI" secondAttribute="bottom" constant="30" id="DFK-sI-0E8"/>
+                            <constraint firstItem="KU5-LE-7yT" firstAttribute="bottom" secondItem="dLr-2z-TDp" secondAttribute="bottom" constant="30" id="DOK-cY-BDF"/>
+                            <constraint firstItem="KU5-LE-7yT" firstAttribute="trailing" secondItem="daN-UL-rvq" secondAttribute="trailing" constant="16" id="IGO-NP-XTq"/>
+                            <constraint firstItem="KU5-LE-7yT" firstAttribute="trailing" secondItem="44P-6a-BJ7" secondAttribute="trailing" constant="16" id="PKv-BJ-EAU"/>
+                            <constraint firstItem="KU5-LE-7yT" firstAttribute="trailing" secondItem="dLr-2z-TDp" secondAttribute="trailing" constant="16" id="bUI-EH-zxE"/>
+                            <constraint firstItem="um9-76-ZvI" firstAttribute="top" secondItem="44P-6a-BJ7" secondAttribute="bottom" constant="30" id="hcp-Rf-Zyh"/>
+                            <constraint firstItem="44P-6a-BJ7" firstAttribute="leading" secondItem="KU5-LE-7yT" secondAttribute="leading" constant="16" id="jLb-jU-PxL"/>
+                            <constraint firstItem="dLr-2z-TDp" firstAttribute="leading" secondItem="KU5-LE-7yT" secondAttribute="leading" constant="16" id="o8c-H3-gIi"/>
+                            <constraint firstItem="daN-UL-rvq" firstAttribute="leading" secondItem="KU5-LE-7yT" secondAttribute="leading" constant="16" id="qRX-9c-wLQ"/>
+                            <constraint firstItem="KU5-LE-7yT" firstAttribute="trailing" secondItem="um9-76-ZvI" secondAttribute="trailing" constant="16" id="vVo-jg-31Z"/>
+                            <constraint firstItem="dLr-2z-TDp" firstAttribute="top" secondItem="daN-UL-rvq" secondAttribute="bottom" constant="30" id="zvf-pH-4u6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nv0-gg-lJd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2K-eh-A4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="88"/>
         </scene>
     </scenes>
     <resources>
