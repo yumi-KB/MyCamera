@@ -88,10 +88,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         // 撮影した写真を、配置したpictureImageに渡す
-        pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         
         // モーダルビューを閉じる
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            // エフェクト画面に遷移
+            self.performSegue(withIdentifier: "showEffectView", sender: nil)
+        })
+    }
+    
+    // 次の画面に遷移するときに渡す画像を格納する
+    var captureImage: UIImage?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 次の画面のインスタンスを格納
+        if let nextViewController = segue.destination as? EffectViewController {
+            nextViewController.originalImage = captureImage
+        }
     }
 }
 
