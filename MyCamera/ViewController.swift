@@ -62,7 +62,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         alertController.addAction(cancelAction)
         
         // ipad向け ポップオーバーのための位置情報を指定
-        alertController.popoverPresentationController?.sourceView = view
+        
+        alertController.popoverPresentationController?.sourceView = sender as! UIView
+        //alertController.popoverPresentationController?.sourceRect = (sender as AnyObject).bounds
+        //alertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
         
         // 選択肢を画面に表示
         present(alertController, animated: true, completion: nil)
