@@ -63,7 +63,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         // ipad向け ポップオーバーのための位置情報を指定
         
-        alertController.popoverPresentationController?.sourceView = sender as! UIView
+        alertController.popoverPresentationController?.sourceView = sender as? UIView
         //alertController.popoverPresentationController?.sourceRect = (sender as AnyObject).bounds
         //alertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
         
@@ -71,7 +71,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func SNSButtonAction(_ sender: Any) {
+    /*
+     @IBAction func SNSButtonAction(_ sender: Any) {
         // 表示画像をアンラップしてシェア画像として取り出し
         if let shareImage = pictureImage.image {
             
@@ -88,6 +89,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             present(controller, animated: true, completion: nil)
         }
     }
+    */
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         // 撮影した写真を、配置したpictureImageに渡す
